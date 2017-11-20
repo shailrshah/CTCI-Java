@@ -12,6 +12,10 @@ public class StringUtils {
         return true;
     }
 
+    public boolean isPalindrome(String s) {
+        return isPalindrome(s, 0, s.length()-1);
+    }
+
     public int countFrequency(String s, char ch, int start, int end) {
         int count = 0;
         if(s.length() <= end)

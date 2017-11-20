@@ -22,6 +22,11 @@ public class StringUtilsTest {
 
         assertFalse(stringUtils.isPalindrome("max", 0, 2));
         assertFalse(stringUtils.isPalindrome("blood", 0, 4));
+
+        assertTrue(stringUtils.isPalindrome("wow"));
+        assertTrue(stringUtils.isPalindrome("lool"));
+        assertFalse(stringUtils.isPalindrome("nope"));
+        assertFalse(stringUtils.isPalindrome("not"));
     }
 
     @Test
