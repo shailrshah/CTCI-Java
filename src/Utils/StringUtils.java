@@ -11,4 +11,14 @@ public class StringUtils {
         while(i < j) if(s.charAt(i++) != s.charAt(j--)) return false;
         return true;
     }
+
+    public int countFrequency(String s, char ch, int start, int end) {
+        int count = 0;
+        if(s.length() <= end)
+            throw new IllegalArgumentException();
+        for(int i = start; i < end; i++)
+            if(s.charAt(i) == ch) count++;
+
+        return count;
+    }
 }

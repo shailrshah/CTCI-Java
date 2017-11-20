@@ -7,7 +7,7 @@ public class IsUnique {
         int mask = 0;
 
         for(int i = 0; i < s.length(); i++) {
-            int n = Character.toLowerCase(s.charAt(i)) - 'A';
+            int n = Character.toLowerCase(s.charAt(i)) - 'a';
             if(bitUtils.isSet(mask, n)) return false;
             else mask = bitUtils.setBit(mask, n);
         }

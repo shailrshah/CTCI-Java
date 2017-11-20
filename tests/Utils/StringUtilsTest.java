@@ -23,4 +23,10 @@ public class StringUtilsTest {
         assertFalse(stringUtils.isPalindrome("max", 0, 2));
         assertFalse(stringUtils.isPalindrome("blood", 0, 4));
     }
+
+    @Test
+    public void countFrequency() throws Exception {
+        assertEquals(2, stringUtils.countFrequency("Shail Shah", 'S', 0, 9));
+        assertEquals(0, stringUtils.countFrequency("Shail Shah", 'z', 0, 9));
+    }
 }
