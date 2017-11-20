@@ -1,10 +1,7 @@
 package com.shailshah.ctci.java.utils;
 
-import com.shailshah.ctci.java.arrays.URLify;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.util.Arrays;
 
 import static org.junit.Assert.*;
 

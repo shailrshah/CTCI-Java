@@ -1,6 +1,5 @@
-package com.shailshah.ctci.java.arrays;
+package com.shailshah.ctci.java.solutions.stringsarrays;
 
-import javafx.scene.transform.Rotate;
 import org.junit.Before;
 import org.junit.Test;
 

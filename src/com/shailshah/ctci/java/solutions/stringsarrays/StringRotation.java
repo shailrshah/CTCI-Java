@@ -1,4 +1,4 @@
-package com.shailshah.ctci.java.arrays;
+package com.shailshah.ctci.java.solutions.stringsarrays;
 
 public class StringRotation {
     public boolean isRotated(String s1, String s2) {

@@ -1,4 +1,4 @@
-package com.shailshah.ctci.java.arrays;
+package com.shailshah.ctci.java.solutions.stringsarrays;
 
 import java.util.ArrayList;
 import java.util.List;

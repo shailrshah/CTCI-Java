@@ -1,4 +1,4 @@
-package com.shailshah.ctci.java.arrays;
+package com.shailshah.ctci.java.solutions.stringsarrays;
 
 public class StringCompression{
     public String getCompressedString(String s) {
