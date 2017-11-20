@@ -1,11 +1,17 @@
-package Utils;
+package com.shailshah.ctci.java.utils;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class StringUtilsTest {
-    StringUtils stringUtils = new StringUtils();
+    private StringUtils stringUtils;
+
+    @Before
+    public void setup() {
+        stringUtils = new StringUtils();
+    }
 
     @Test
     public void reverse() throws Exception {
@@ -33,5 +39,10 @@ public class StringUtilsTest {
     public void countFrequency() throws Exception {
         assertEquals(2, stringUtils.countFrequency("Shail Shah", 'S', 0, 9));
         assertEquals(0, stringUtils.countFrequency("Shail Shah", 'z', 0, 9));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testIllegalArgumentException() {
+        assertEquals(0, stringUtils.countFrequency("Shail Shah", 'z', 0, 10));
     }
 }

@@ -1,6 +1,6 @@
-package Arrays;
+package com.shailshah.ctci.java.arrays;
 
-import Utils.StringUtils;
+import com.shailshah.ctci.java.utils.StringUtils;
 
 public class URLify {
 

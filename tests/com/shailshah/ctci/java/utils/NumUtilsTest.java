@@ -1,16 +1,18 @@
-package Utils;
+package com.shailshah.ctci.java.utils;
 
+import org.junit.Before;
 import org.junit.Test;
-
 import java.util.Arrays;
-
 import static org.junit.Assert.*;
 
-/**
- * Created by shail on 11/19/17.
- */
 public class NumUtilsTest {
-    NumUtils numUtils = new NumUtils();
+    private NumUtils numUtils;
+
+    @Before
+    public void setup() {
+        numUtils = new NumUtils();
+    }
+
     @Test
     public void isPrime() throws Exception {
         assertFalse(numUtils.isPrime(0));

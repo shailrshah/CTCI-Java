@@ -1,10 +1,16 @@
-package Utils;
+package com.shailshah.ctci.java.utils;
 
+import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class BitUtilsTest {
-    BitUtils bitUtils = new BitUtils();
+    private BitUtils bitUtils;
+
+    @Before
+    public void setup() {
+        bitUtils = new BitUtils();
+    }
 
     @Test
     public void isSet() throws Exception {
@@ -30,5 +36,15 @@ public class BitUtilsTest {
     public void toggleBit() throws Exception {
         assertEquals(5, bitUtils.toggleBit(7, 1));
         assertEquals(1, bitUtils.toggleBit(0, 0));
+    }
+
+    @Test
+    public void getNumberOfSetBits() throws Exception {
+        assertEquals(1, bitUtils.getNumberOfSetBits(1));
+        assertEquals(0, bitUtils.getNumberOfSetBits(0));
+        assertEquals(3, bitUtils.getNumberOfSetBits(7));
+        assertEquals(31, bitUtils.getNumberOfSetBits(Integer.MIN_VALUE-1));
+        assertEquals(1, bitUtils.getNumberOfSetBits(Integer.MIN_VALUE));
+        assertEquals(31, bitUtils.getNumberOfSetBits(Integer.MAX_VALUE));
     }
 }

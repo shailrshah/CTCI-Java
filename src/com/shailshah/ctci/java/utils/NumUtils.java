@@ -1,4 +1,4 @@
-package Utils;
+package com.shailshah.ctci.java.utils;
 
 public class NumUtils {
     public boolean isPrime(int n) {
@@ -12,7 +12,7 @@ public class NumUtils {
     }
 
     public int[] getPrimes(int n) {
-        int primes[] = new int[n];
+        int[] primes = new int[n];
         int count = 0;
         for(int i = 2; count < n; i++)
             if(isPrime(i))

@@ -1,11 +1,17 @@
-package Arrays;
+package com.shailshah.ctci.java.arrays;
 
-import Utils.StringUtils;
+import com.shailshah.ctci.java.utils.StringUtils;
+import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class IsUniqueTest {
-    IsUnique obj = new IsUnique();
+    private IsUnique obj;
+
+    @Before
+    public void setup() {
+        obj = new IsUnique();
+    }
 
     @Test
     public void reverse() throws Exception {

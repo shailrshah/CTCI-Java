@@ -1,5 +1,6 @@
-package Arrays;
-import Utils.BitUtils;
+package com.shailshah.ctci.java.arrays;
+
+import com.shailshah.ctci.java.utils.BitUtils;
 
 public class IsUnique {
     public boolean isUnique(String s) {
