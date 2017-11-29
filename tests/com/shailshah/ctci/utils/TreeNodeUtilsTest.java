@@ -9,7 +9,7 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 public class TreeNodeUtilsTest {
-    TreeNodeUtils treeNodeUtils;
+   TreeNodeUtils treeNodeUtils;
     TreeNode mockedTree;
 
     /* mockedTree
@@ -72,5 +72,15 @@ public class TreeNodeUtilsTest {
         assertEquals(2, levels.get(1).size());
         assertEquals(3, levels.get(2).size());
         assertEquals(2, levels.get(3).size());
+    }
+
+    @Test
+    public void serializeTree() throws Exception {
+        String serializedTree = treeNodeUtils.serializeTree(mockedTree);
+        assertEquals("1, 2, 3, 4, 5, *, 6, 7, *, *, 8", serializedTree);
+        TreeNode root = treeNodeUtils.deserializeTree(serializedTree);
+        assertTrue(treeNodeUtils.isSame(root, mockedTree));
+
+        assertEquals(null, treeNodeUtils.deserializeTree(""));
     }
 }

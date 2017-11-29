@@ -57,4 +57,59 @@ public class TreeNodeUtils {
 
         return levels;
     }
+
+    public boolean isSame(TreeNode a, TreeNode b) {
+        if(a == null && b == null) return true;
+        if(a == null || b == null || a.val != b.val) return false;
+        return isSame(a.left, b.left) && isSame(a.right, b.right);
+    }
+
+    String delimiter = " ";
+    String nullSymbol = "*";
+    public String serializeTree(TreeNode root) {
+        if(root == null) return "";
+        StringBuilder sb = new StringBuilder();
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while(!queue.isEmpty()) {
+            TreeNode curr = queue.poll();
+            sb.append(curr == null ? nullSymbol : curr.val);
+            sb.append(delimiter);
+            if(curr != null) {
+                queue.add(curr.left); // can be null
+                queue.add(curr.right); // can be null
+            }
+        }
+
+        // save some space by deleting child of last depth's leaf node's * nodes
+        int i = sb.length()-1;
+        while(sb.charAt(i)== ' ' || sb.charAt(i) == '*') i--;
+        sb.delete(i+1, sb.length());
+
+        return sb.toString();
+    }
+    // Get parent from queue, children from string
+    public TreeNode deserializeTree(String s) {
+        if(s.length() == 0) return null;
+
+        String[] nodes = s.split(delimiter);
+        int i = 0;
+        TreeNode root = new TreeNode(Integer.parseInt(nodes[i++]));
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while(i < nodes.length) {
+            TreeNode parent = queue.poll();
+            if(!nodes[i].equals(nullSymbol)) {
+                parent.left = new TreeNode(Integer.parseInt(nodes[i]));
+                queue.add(parent.left);
+            }
+            i++;
+            if(i < nodes.length && !nodes[i].equals(nullSymbol)){
+                parent.right = new TreeNode(Integer.parseInt(nodes[i]));
+                queue.add(parent.right);
+            }
+            i++;
+        }
+        return root;
+    }
 }

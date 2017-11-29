@@ -30,10 +30,10 @@ public class Graph {
     }
 
     public Edge findEdge(int a, int b) {
-        for(Edge e : edges.get(a)) {
+        for(Edge e : edges.get(a))
             if(e.b == b)
                 return e;
-        }
+
         return null;
     }
 

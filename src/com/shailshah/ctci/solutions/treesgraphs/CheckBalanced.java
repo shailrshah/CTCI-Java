@@ -8,10 +8,8 @@ public class CheckBalanced {
 
     public boolean isBalanced(TreeNode root) {
         if(root == null) return true;
-        int leftHeight = treeNodeUtils.getHeight(root.left);
-        int rightHeight = treeNodeUtils.getHeight(root.right);
 
-        return Math.abs(leftHeight - rightHeight) < 2 &&
+        return Math.abs(treeNodeUtils.getHeight(root.left) - treeNodeUtils.getHeight(root.right)) <= 1 &&
                 isBalanced(root.left) &&
                 isBalanced(root.right);
     }
